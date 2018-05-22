@@ -23,9 +23,9 @@ namespace Lab9
                 array.Add(row);
             }
 
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < array.Count; i++)
             {
-                for (int j = 0; j < n; j++)
+                for (int j = 0; j < array[i].Count; j++)
                 {
                     Console.Write(array[i][j].ToString() + " ");
                 }
@@ -34,7 +34,7 @@ namespace Lab9
             }
             Console.WriteLine();
             var sorter = new Sorter();
-            List<List<int>> array2 = sorter.Sorting(array);
+            List<List<int>> array2 = sorter.Sort(array);
 
             for (int i = 0; i < array2.Count; i++)
             {

@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Lab9
 {
     class Sorter
     {
-        public List<List<int>> Sorting(List<List<int>> array)
+        public List<List<int>> Sort(List<List<int>> array)
         {
             int k = FindColumnWithMax(array);
             for(int i = 0; i < array.Count(); i++)
@@ -26,20 +23,20 @@ namespace Lab9
         }
         private int FindColumnWithMax(List<List<int>> array)
         {
-            int k = 0;
+            int maxIndex = 0;
             int max = array[0][0];
-            for(int i = 0; i < array.Count(); i++)
+            for(int i = 0; i < array.Count; i++)
             {
-                for(int j = 0; j < array[i].Count(); j++)
+                for(int j = 0; j < array[i].Count; j++)
                 {
                     if (array[i][j] > max)
                     {
                         max = array[i][j];
-                        k = j;
+                        maxIndex = j;
                     }
                 }
             }
-            return k;
+            return maxIndex;
         }
     }
 }
